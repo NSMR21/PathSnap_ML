@@ -1,5 +1,8 @@
 # raw data + handout PDFs (provided by organisers, not ours to redistribute)
 materials/
+# evaluator-test trips (contain reference routes) must never be committed, wherever extracted
+**/evaluator_test/
+evaluator_test.zip
 
 # large regenerated intermediates (rebuild with scripts/02_build_dataset.py)
 outputs/features/*.pkl

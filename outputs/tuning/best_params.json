@@ -1,0 +1,25 @@
+{
+  "best_trial": 27,
+  "cv_top1": 0.8875714590134782,
+  "cv_cv_f1_macro": 0.9319468559904731,
+  "cv_cv_f1_macro_std": 0.004185223486243456,
+  "cv_cv_log_loss": 0.08770597659232743,
+  "cv_cv_top1_std": 0.006274824862551348,
+  "cv_fit_s_mean": 8.719423766665082,
+  "cv_folds_done": 3,
+  "cv_mean_iterations": 209.0,
+  "params": {
+    "learning_rate": 0.03691524052076411,
+    "max_iter": 209,
+    "max_leaf_nodes": 107,
+    "min_samples_leaf": 68,
+    "l2_regularization": 0.8470760688730844,
+    "max_features": 0.7572583899821607
+  },
+  "fixed": {
+    "early_stopping": true,
+    "validation_fraction": 0.1,
+    "n_iter_no_change": 15,
+    "random_state": 352
+  }
+}

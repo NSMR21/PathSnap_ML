@@ -1,0 +1,10 @@
+{
+  "trials": 30,
+  "states": {
+    "COMPLETE": 30
+  },
+  "search_wall_s": 2048.964004699985,
+  "mean_trial_s": 68.27178453333335,
+  "refit_s": 13.636224999994738,
+  "refit_note": "re-timed by scripts/05b_refit_tuned.py (original refit was interrupted by laptop sleep)"
+}

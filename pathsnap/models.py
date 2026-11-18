@@ -106,6 +106,15 @@ class EpochMLP(BaseEstimator, ClassifierMixin):
         return (self.predict_proba(X)[:, 1] >= 0.5).astype(int)
 
 
+def hgb_from_params(params: dict) -> HistGradientBoostingClassifier:
+    """The tuned model family (scripts/05) - same fixed settings as the untuned HGB."""
+    return HistGradientBoostingClassifier(
+        learning_rate=params["learning_rate"], max_iter=params["max_iter"],
+        max_leaf_nodes=params["max_leaf_nodes"], min_samples_leaf=params["min_samples_leaf"],
+        l2_regularization=params["l2_regularization"], max_features=params.get("max_features", 1.0),
+        early_stopping=True, validation_fraction=0.1, n_iter_no_change=15, random_state=SEED)
+
+
 @dataclass
 class ModelSpec:
     key: str
