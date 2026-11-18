@@ -1,0 +1,77 @@
+train rows 599,887 (fixes 92,593), positive share 0.153, trips 80
+baseline nearest arc: CV top1 0.5580  test top1 0.5362
+
+=== Logistic Regression (logreg) params={'C': 1.0, 'max_iter': 1000}
+  fold 0: F1m 0.9225  top1 0.8696  logloss 0.1165  (train F1m 0.9233)  fit 1.4s
+  fold 1: F1m 0.9396  top1 0.9074  logloss 0.0849  (train F1m 0.9181)  fit 1.3s
+  fold 2: F1m 0.9328  top1 0.9036  logloss 0.0952  (train F1m 0.9203)  fit 1.3s
+  fold 3: F1m 0.8915  top1 0.8235  logloss 0.1358  (train F1m 0.9286)  fit 1.3s
+  fold 4: F1m 0.9202  top1 0.8737  logloss 0.1251  (train F1m 0.9229)  fit 1.7s
+  student_test: F1m 0.9212  top1 0.8728  logloss 0.1041  continuity 0.7606  route F1 0.8837  fit 2.0s  infer 1.2 ms/1k fixes
+
+=== Gaussian Naive Bayes (quantile-normalised) (gnb) params={'n_quantiles': 500, 'var_smoothing': 1e-09}
+  fold 0: F1m 0.8157  top1 0.8370  logloss 0.8477  (train F1m 0.8355)  fit 2.9s
+  fold 1: F1m 0.8577  top1 0.8634  logloss 0.4754  (train F1m 0.8258)  fit 2.8s
+  fold 2: F1m 0.8564  top1 0.8575  logloss 0.4965  (train F1m 0.8304)  fit 2.4s
+  fold 3: F1m 0.8286  top1 0.7956  logloss 0.7497  (train F1m 0.8422)  fit 3.6s
+  fold 4: F1m 0.8119  top1 0.7955  logloss 1.0809  (train F1m 0.8340)  fit 4.1s
+  student_test: F1m 0.8350  top1 0.8320  logloss 0.6289  continuity 0.6340  route F1 0.8019  fit 3.9s  infer 43.1 ms/1k fixes
+
+=== Distance-weighted KNN (knn) params={'n_neighbors': 35, 'weights': 'distance', 'max_rows': 120000}
+  fold 0: F1m 0.9188  top1 0.8686  logloss 0.1481  (train F1m 0.9461)  fit 0.2s
+  fold 1: F1m 0.9394  top1 0.9072  logloss 0.0928  (train F1m 0.9437)  fit 0.1s
+  fold 2: F1m 0.9349  top1 0.8959  logloss 0.1142  (train F1m 0.9437)  fit 0.1s
+  fold 3: F1m 0.8859  top1 0.8102  logloss 0.1748  (train F1m 0.9513)  fit 0.1s
+  fold 4: F1m 0.9223  top1 0.8809  logloss 0.1543  (train F1m 0.9451)  fit 0.1s
+  student_test: F1m 0.9212  top1 0.8767  logloss 0.1204  continuity 0.7510  route F1 0.8881  fit 0.1s  infer 747.1 ms/1k fixes
+
+=== Decision Tree (dtree) params={'max_depth': 12, 'min_samples_leaf': 50}
+  fold 0: F1m 0.9243  top1 0.8780  logloss 0.1200  (train F1m 0.9394)  fit 10.8s
+  fold 1: F1m 0.9459  top1 0.9129  logloss 0.0753  (train F1m 0.9354)  fit 10.5s
+  fold 2: F1m 0.9410  top1 0.9068  logloss 0.0869  (train F1m 0.9367)  fit 10.4s
+  fold 3: F1m 0.8965  top1 0.8264  logloss 0.1453  (train F1m 0.9436)  fit 10.4s
+  fold 4: F1m 0.9240  top1 0.8819  logloss 0.1259  (train F1m 0.9399)  fit 10.8s
+  student_test: F1m 0.9259  top1 0.8794  logloss 0.0977  continuity 0.7530  route F1 0.8901  fit 12.3s  infer 0.5 ms/1k fixes
+
+=== Random Forest (rf) params={'n_estimators': 150, 'max_depth': 20, 'min_samples_leaf': 3, 'max_features': 'sqrt'}
+  fold 0: F1m 0.9304  top1 0.8803  logloss 0.0936  (train F1m 0.9746)  fit 38.5s
+  fold 1: F1m 0.9481  top1 0.9156  logloss 0.0623  (train F1m 0.9720)  fit 38.1s
+  fold 2: F1m 0.9473  top1 0.9133  logloss 0.0724  (train F1m 0.9737)  fit 38.4s
+  fold 3: F1m 0.9045  top1 0.8410  logloss 0.1126  (train F1m 0.9779)  fit 37.8s
+  fold 4: F1m 0.9288  top1 0.8880  logloss 0.0969  (train F1m 0.9751)  fit 39.8s
+  student_test: F1m 0.9364  top1 0.8938  logloss 0.0797  continuity 0.7721  route F1 0.8947  fit 46.6s  infer 16.7 ms/1k fixes
+
+=== Extra Trees (extratrees) params={'n_estimators': 200, 'max_depth': 22, 'min_samples_leaf': 2, 'max_features': 'sqrt'}
+  fold 0: F1m 0.9301  top1 0.8809  logloss 0.0948  (train F1m 0.9625)  fit 23.6s
+  fold 1: F1m 0.9463  top1 0.9127  logloss 0.0648  (train F1m 0.9605)  fit 23.7s
+  fold 2: F1m 0.9457  top1 0.9105  logloss 0.0737  (train F1m 0.9611)  fit 25.5s
+  fold 3: F1m 0.9025  top1 0.8371  logloss 0.1159  (train F1m 0.9673)  fit 24.0s
+  fold 4: F1m 0.9300  top1 0.8880  logloss 0.0981  (train F1m 0.9632)  fit 24.2s
+  student_test: F1m 0.9304  top1 0.8879  logloss 0.0827  continuity 0.7655  route F1 0.8932  fit 28.0s  infer 27.4 ms/1k fixes
+
+=== Histogram Gradient Boosting (hgb) params={'learning_rate': 0.1, 'max_iter': 400, 'max_leaf_nodes': 31, 'min_samples_leaf': 40, 'l2_regularization': 0.0}
+  fold 0: F1m 0.9276  top1 0.8771  logloss 0.0972  (train F1m 0.9474)  fit 3.8s
+  fold 1: F1m 0.9476  top1 0.9153  logloss 0.0640  (train F1m 0.9451)  fit 3.4s
+  fold 2: F1m 0.9464  top1 0.9119  logloss 0.0737  (train F1m 0.9491)  fit 4.2s
+  fold 3: F1m 0.9037  top1 0.8392  logloss 0.1140  (train F1m 0.9546)  fit 4.1s
+  fold 4: F1m 0.9282  top1 0.8875  logloss 0.0983  (train F1m 0.9490)  fit 3.2s
+  student_test: F1m 0.9374  top1 0.8998  logloss 0.0782  continuity 0.7722  route F1 0.8978  fit 5.1s  infer 12.2 ms/1k fixes
+
+=== MLP (64-32, ReLU) (mlp) params={'hidden': [64, 32], 'alpha': 0.0001, 'lr': 0.001, 'batch_size': 1024, 'max_epochs': 30, 'patience': 4}
+  fold 0: F1m 0.9234  top1 0.8773  logloss 0.1043  (train F1m 0.9393)  fit 38.1s
+  fold 1: F1m 0.9439  top1 0.9108  logloss 0.0676  (train F1m 0.9361)  fit 37.3s
+  fold 2: F1m 0.9413  top1 0.9081  logloss 0.0786  (train F1m 0.9361)  fit 38.9s
+  fold 3: F1m 0.8968  top1 0.8357  logloss 0.1205  (train F1m 0.9427)  fit 38.6s
+  fold 4: F1m 0.9268  top1 0.8870  logloss 0.1027  (train F1m 0.9386)  fit 37.8s
+  student_test: F1m 0.9275  top1 0.8856  logloss 0.0860  continuity 0.7762  route F1 0.8984  fit 48.6s  infer 3.9 ms/1k fixes
+
+Ranking by CV top-1 (primary selection metric):
+     model  cv_f1_macro_mean  cv_top1_mean  cv_log_loss_mean  test_f1_macro  test_top1  test_log_loss  test_route_continuity  test_route_f1  infer_ms_per_1k_fixes
+        rf            0.9318        0.8876            0.0876         0.9364     0.8938         0.0797                 0.7721         0.8947                16.7495
+       hgb            0.9307        0.8862            0.0894         0.9374     0.8998         0.0782                 0.7722         0.8978                12.2099
+extratrees            0.9309        0.8858            0.0895         0.9304     0.8879         0.0827                 0.7655         0.8932                27.4310
+       mlp            0.9264        0.8838            0.0947         0.9275     0.8856         0.0860                 0.7762         0.8984                 3.8648
+     dtree            0.9264        0.8812            0.1107         0.9259     0.8794         0.0977                 0.7530         0.8901                 0.5124
+    logreg            0.9213        0.8755            0.1115         0.9212     0.8728         0.1041                 0.7606         0.8837                 1.2040
+       knn            0.9203        0.8726            0.1368         0.9212     0.8767         0.1204                 0.7510         0.8881               747.0929
+       gnb            0.8341        0.8298            0.7300         0.8350     0.8320         0.6289                 0.6340         0.8019                43.0786

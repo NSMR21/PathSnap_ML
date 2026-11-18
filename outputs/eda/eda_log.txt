@@ -1,0 +1,172 @@
+       train 00000001  fixes=  1315  arcs= 165790  max_gap=16s  route_conn=1.000
+       train 00000002  fixes=  7243  arcs=  16139  max_gap=160s  route_conn=0.996
+       train 00000003  fixes=   821  arcs=  18028  max_gap=2s  route_conn=1.000
+       train 00000004  fixes=  1064  arcs=  15499  max_gap=51s  route_conn=1.000
+       train 00000005  fixes=  1045  arcs=   1579  max_gap=1s  route_conn=1.000
+       train 00000006  fixes=  1450  arcs=   6757  max_gap=301s  route_conn=1.000
+       train 00000008  fixes=  3093  arcs=  10421  max_gap=2s  route_conn=1.000
+       train 00000010  fixes=  2711  arcs=  15715  max_gap=1s  route_conn=1.000
+       train 00000011  fixes=  2828  arcs=   5393  max_gap=909s  route_conn=1.000
+       train 00000012  fixes=  1608  arcs=  38599  max_gap=2s  route_conn=1.000
+       train 00000013  fixes=  2580  arcs= 307392  max_gap=8s  route_conn=1.000
+       train 00000014  fixes=   448  arcs=   8288  max_gap=72s  route_conn=1.000
+       train 00000016  fixes=  1305  arcs=  15098  max_gap=1s  route_conn=1.000
+       train 00000018  fixes=   379  arcs=  11545  max_gap=3s  route_conn=1.000
+       train 00000019  fixes=  2354  arcs= 108517  max_gap=1s  route_conn=0.994
+       train 00000020  fixes=  2353  arcs=   5958  max_gap=1s  route_conn=1.000
+       train 00000021  fixes= 15783  arcs=   1510  max_gap=2161s  route_conn=1.000
+       train 00000022  fixes=   474  arcs=  18982  max_gap=22s  route_conn=1.000
+       train 00000024  fixes=   801  arcs=  51609  max_gap=458s  route_conn=1.000
+       train 00000025  fixes=  1179  arcs=  85639  max_gap=2s  route_conn=1.000
+       train 00000026  fixes=   361  arcs=   5043  max_gap=17s  route_conn=1.000
+       train 00000027  fixes=   694  arcs=   5588  max_gap=2s  route_conn=1.000
+       train 00000028  fixes=  3565  arcs= 127216  max_gap=196s  route_conn=1.000
+       train 00000029  fixes=   733  arcs=  20868  max_gap=1s  route_conn=1.000
+       train 00000031  fixes=  4245  arcs= 125831  max_gap=1s  route_conn=1.000
+       train 00000032  fixes=  2464  arcs= 259437  max_gap=41s  route_conn=1.000
+       train 00000033  fixes=  5844  arcs=   6360  max_gap=3s  route_conn=0.994
+       train 00000034  fixes=  3614  arcs=  40971  max_gap=15s  route_conn=1.000
+       train 00000035  fixes=  1643  arcs=  35212  max_gap=1s  route_conn=1.000
+       train 00000036  fixes=  1368  arcs=   9619  max_gap=1s  route_conn=1.000
+       train 00000037  fixes=   677  arcs=  21744  max_gap=52s  route_conn=1.000
+       train 00000038  fixes=  1287  arcs=  42026  max_gap=20s  route_conn=1.000
+       train 00000039  fixes=   363  arcs=   2388  max_gap=10s  route_conn=1.000
+       train 00000041  fixes=  1019  arcs=  14317  max_gap=89s  route_conn=0.997
+       train 00000042  fixes=  7739  arcs= 101128  max_gap=670s  route_conn=0.999
+       train 00000043  fixes=  2322  arcs= 215620  max_gap=230s  route_conn=1.000
+       train 00000044  fixes=   546  arcs=   9209  max_gap=341s  route_conn=1.000
+       train 00000045  fixes=   640  arcs=   4335  max_gap=1s  route_conn=1.000
+       train 00000046  fixes=  1401  arcs=    649  max_gap=22s  route_conn=1.000
+       train 00000047  fixes=  1272  arcs=  39747  max_gap=1s  route_conn=1.000
+       train 00000048  fixes=  1240  arcs=   2592  max_gap=4s  route_conn=1.000
+       train 00000050  fixes=   518  arcs=   4576  max_gap=1s  route_conn=1.000
+       train 00000051  fixes=   984  arcs=   8494  max_gap=2s  route_conn=1.000
+       train 00000053  fixes=  1304  arcs= 148707  max_gap=10s  route_conn=1.000
+       train 00000054  fixes= 19313  arcs= 116916  max_gap=79s  route_conn=1.000
+       train 00000055  fixes=  2472  arcs= 198961  max_gap=184s  route_conn=1.000
+       train 00000057  fixes=  1645  arcs=  18777  max_gap=13s  route_conn=1.000
+       train 00000058  fixes=   599  arcs=  39383  max_gap=16s  route_conn=1.000
+       train 00000060  fixes=   854  arcs=  30077  max_gap=27s  route_conn=1.000
+       train 00000061  fixes=  1430  arcs=  10339  max_gap=3s  route_conn=1.000
+       train 00000062  fixes=  3378  arcs=  62836  max_gap=56s  route_conn=1.000
+       train 00000063  fixes=  2781  arcs=   5553  max_gap=2s  route_conn=1.000
+       train 00000064  fixes=  2093  arcs=  56986  max_gap=4s  route_conn=1.000
+       train 00000066  fixes=  4325  arcs=  20071  max_gap=1s  route_conn=1.000
+       train 00000068  fixes=   747  arcs=   7058  max_gap=12s  route_conn=1.000
+       train 00000069  fixes=  2067  arcs=  17193  max_gap=2658s  route_conn=0.998
+       train 00000070  fixes=  2076  arcs=   3776  max_gap=152s  route_conn=1.000
+       train 00000071  fixes=   850  arcs=  14868  max_gap=6s  route_conn=1.000
+       train 00000072  fixes=   969  arcs=   7063  max_gap=1s  route_conn=1.000
+       train 00000074  fixes=  1929  arcs=  61055  max_gap=24s  route_conn=1.000
+       train 00000075  fixes=  1628  arcs=   2124  max_gap=2s  route_conn=0.981
+       train 00000078  fixes=  2909  arcs= 151458  max_gap=52810s  route_conn=1.000
+       train 00000079  fixes=   689  arcs=  72116  max_gap=1s  route_conn=1.000
+       train 00000080  fixes=  2510  arcs=  18746  max_gap=59s  route_conn=0.993
+       train 00000081  fixes=  3224  arcs=   5048  max_gap=536s  route_conn=1.000
+       train 00000082  fixes=  4268  arcs=  31754  max_gap=1s  route_conn=1.000
+       train 00000083  fixes=  1507  arcs=  25393  max_gap=1s  route_conn=1.000
+       train 00000084  fixes= 16031  arcs=  50888  max_gap=312s  route_conn=1.000
+       train 00000085  fixes=  1092  arcs=   1554  max_gap=70s  route_conn=1.000
+       train 00000086  fixes=  4143  arcs= 237656  max_gap=1s  route_conn=0.999
+       train 00000088  fixes=   876  arcs=  24376  max_gap=232s  route_conn=1.000
+       train 00000089  fixes=  1228  arcs=  32823  max_gap=193s  route_conn=0.996
+       train 00000090  fixes=   536  arcs=   7942  max_gap=153064s  route_conn=1.000
+       train 00000092  fixes=  7892  arcs=  53348  max_gap=1s  route_conn=1.000
+       train 00000093  fixes=  1211  arcs=  85122  max_gap=6s  route_conn=1.000
+       train 00000095  fixes=  1551  arcs=   3723  max_gap=2s  route_conn=1.000
+       train 00000096  fixes=  3271  arcs=  32276  max_gap=1s  route_conn=1.000
+       train 00000097  fixes=  1740  arcs=  48503  max_gap=2s  route_conn=1.000
+       train 00000098  fixes=  5584  arcs=  88137  max_gap=50s  route_conn=1.000
+       train 00000099  fixes=  2322  arcs=  72870  max_gap=25s  route_conn=1.000
+student_test 00000000  fixes=  2503  arcs=  18196  max_gap=2s  route_conn=1.000
+student_test 00000007  fixes=  1354  arcs=   4369  max_gap=1s  route_conn=1.000
+student_test 00000009  fixes=  1049  arcs=  13106  max_gap=2s  route_conn=1.000
+student_test 00000040  fixes=  2995  arcs=  27026  max_gap=1s  route_conn=1.000
+student_test 00000052  fixes=   262  arcs=   3577  max_gap=2s  route_conn=1.000
+student_test 00000056  fixes=  3958  arcs=  27631  max_gap=3s  route_conn=1.000
+student_test 00000065  fixes=   768  arcs=  13184  max_gap=210s  route_conn=1.000
+student_test 00000076  fixes=  1486  arcs=  56027  max_gap=32s  route_conn=0.997
+student_test 00000077  fixes=  3911  arcs=   9622  max_gap=1s  route_conn=1.000
+student_test 00000091  fixes=   874  arcs=  12303  max_gap=1s  route_conn=1.000
+partition             student_test          train
+trips                    10.000000      80.000000
+fixes_total           19160.000000  208417.000000
+fixes_median           1420.000000    1529.000000
+fixes_min               262.000000     361.000000
+fixes_max              3958.000000   19313.000000
+duration_h_total          5.625000     126.231211
+path_km_total           296.956926    2978.623707
+nodes_median           6596.500000    9608.000000
+arcs_median           13145.000000   19526.500000
+nan_values                0.000000       0.000000
+trips_with_gap_gt60s      1.000000      22.000000
+route_arcs_median       250.000000     280.000000
+{
+  "trips": {
+    "student_test": 10,
+    "train": 80
+  },
+  "fixes_total": {
+    "student_test": 19160,
+    "train": 208417
+  },
+  "nan_values_track": 0,
+  "nan_values_nodes": 0,
+  "invalid_coordinates": 0,
+  "non_increasing_timestamps": 0,
+  "share_steps_exactly_1s": {
+    "train": 0.9650134157638826,
+    "student_test": 0.9862140992167102
+  },
+  "trips_with_gap_over_60s": [
+    "00000002",
+    "00000006",
+    "00000011",
+    "00000014",
+    "00000021",
+    "00000024",
+    "00000028",
+    "00000041",
+    "00000042",
+    "00000043",
+    "00000044",
+    "00000054",
+    "00000055",
+    "00000069",
+    "00000070",
+    "00000078",
+    "00000081",
+    "00000084",
+    "00000085",
+    "00000088",
+    "00000089",
+    "00000090",
+    "00000065"
+  ],
+  "largest_gap_s": {
+    "00000090": 153064.0,
+    "00000078": 52810.0,
+    "00000069": 2658.0,
+    "00000021": 2161.0,
+    "00000011": 909.0
+  },
+  "duplicate_positions_total": 6,
+  "route_connectivity_min": 0.9813084112149533,
+  "trips_route_not_fully_connected": [
+    "00000002",
+    "00000019",
+    "00000033",
+    "00000041",
+    "00000042",
+    "00000069",
+    "00000075",
+    "00000080",
+    "00000086",
+    "00000089",
+    "00000076"
+  ],
+  "route_ids_out_of_range": 0,
+  "tracks_outside_network_bbox": [],
+  "train_two_way_share_median": 0.9511203120769942,
+  "isolated_nodes_total": 0
+}

@@ -1,0 +1,35 @@
+{
+  "label_distance_train": {
+    "p50": 5.678557190820494,
+    "p75": 10.917024430239726,
+    "p90": 89.33304197564807,
+    "p95": 142.04436496182237,
+    "p98": 170.79479561854612,
+    "p99": 205.39467792162452,
+    "share_le_threshold": 0.8884208102026226
+  },
+  "chosen": {
+    "CANDIDATE_RADIUS_M": 50.0,
+    "MAX_CANDIDATES": 10,
+    "FALLBACK_CANDIDATES": 3,
+    "LABEL_MAX_DIST_M": 50.0,
+    "INDEX_STEP_M": 10.0,
+    "INDEX_MARGIN_M": 400.0,
+    "HEADING_HALF_WINDOW": 2,
+    "SUPPORT_OFFSETS": [
+      -6,
+      -3,
+      3,
+      6
+    ],
+    "SEED": 352
+  },
+  "chosen_point_in_sweep": [
+    {
+      "radius_m": 50,
+      "max_cands": 10,
+      "miss_rate": 0.006594225597044701,
+      "mean_cands": 6.481394670612761
+    }
+  ]
+}

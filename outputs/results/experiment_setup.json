@@ -1,0 +1,114 @@
+{
+  "seed": 352,
+  "folds": 5,
+  "cv": "GroupKFold by trip_id",
+  "train_stride": 2,
+  "train_rows": 599887,
+  "features": [
+    "dist_m",
+    "dist_rank",
+    "dist_gap_m",
+    "dist_ratio",
+    "n_cands",
+    "head_cos",
+    "head_gap_deg",
+    "align_score",
+    "align_rank",
+    "speed_mps",
+    "turn_deg",
+    "dt_prev_s",
+    "jump_mps",
+    "arc_len_m",
+    "proj_frac",
+    "at_arc_end",
+    "tail_in_deg",
+    "head_out_deg",
+    "two_way",
+    "support_m",
+    "support_gap_m"
+  ],
+  "student_test_rows": 131631,
+  "student_test_fixes": 19160,
+  "models": {
+    "logreg": {
+      "name": "Logistic Regression",
+      "family": "Linear / probabilistic",
+      "params": {
+        "C": 1.0,
+        "max_iter": 1000
+      }
+    },
+    "gnb": {
+      "name": "Gaussian Naive Bayes (quantile-normalised)",
+      "family": "Linear / probabilistic",
+      "params": {
+        "n_quantiles": 500,
+        "var_smoothing": 1e-09
+      }
+    },
+    "knn": {
+      "name": "Distance-weighted KNN",
+      "family": "Instance-based",
+      "params": {
+        "n_neighbors": 35,
+        "weights": "distance",
+        "max_rows": 120000
+      }
+    },
+    "dtree": {
+      "name": "Decision Tree",
+      "family": "Tree-based",
+      "params": {
+        "max_depth": 12,
+        "min_samples_leaf": 50
+      }
+    },
+    "rf": {
+      "name": "Random Forest",
+      "family": "Ensemble (bagging)",
+      "params": {
+        "n_estimators": 150,
+        "max_depth": 20,
+        "min_samples_leaf": 3,
+        "max_features": "sqrt"
+      }
+    },
+    "extratrees": {
+      "name": "Extra Trees",
+      "family": "Ensemble (randomised trees)",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 22,
+        "min_samples_leaf": 2,
+        "max_features": "sqrt"
+      }
+    },
+    "hgb": {
+      "name": "Histogram Gradient Boosting",
+      "family": "Boosting",
+      "params": {
+        "learning_rate": 0.1,
+        "max_iter": 400,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 40,
+        "l2_regularization": 0.0
+      }
+    },
+    "mlp": {
+      "name": "MLP (64-32, ReLU)",
+      "family": "Neural network",
+      "params": {
+        "hidden": [
+          64,
+          32
+        ],
+        "alpha": 0.0001,
+        "lr": 0.001,
+        "batch_size": 1024,
+        "max_epochs": 30,
+        "patience": 4
+      }
+    }
+  },
+  "threshold_for_binary_metrics": 0.5
+}

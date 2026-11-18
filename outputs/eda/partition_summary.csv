@@ -1,0 +1,3 @@
+partition,trips,fixes_total,fixes_median,fixes_min,fixes_max,duration_h_total,path_km_total,nodes_median,arcs_median,nan_values,trips_with_gap_gt60s,route_arcs_median
+student_test,10,19160,1420.0,262,3958,5.625,296.9569262618747,6596.5,13145.0,0,1,250.0
+train,80,208417,1529.0,361,19313,126.23121083333335,2978.6237070425937,9608.0,19526.5,0,22,280.0

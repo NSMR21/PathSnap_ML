@@ -1,0 +1,16 @@
+{
+  "CANDIDATE_RADIUS_M": 50.0,
+  "MAX_CANDIDATES": 10,
+  "FALLBACK_CANDIDATES": 3,
+  "LABEL_MAX_DIST_M": 50.0,
+  "INDEX_STEP_M": 10.0,
+  "INDEX_MARGIN_M": 400.0,
+  "HEADING_HALF_WINDOW": 2,
+  "SUPPORT_OFFSETS": [
+    -6,
+    -3,
+    3,
+    6
+  ],
+  "SEED": 352
+}
