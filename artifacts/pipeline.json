@@ -1,0 +1,119 @@
+{
+  "created": "2026-11-18",
+  "model": {
+    "file": "candidate_model.joblib",
+    "type": "sklearn HistGradientBoostingClassifier",
+    "params": {
+      "learning_rate": 0.03691524052076411,
+      "max_iter": 209,
+      "max_leaf_nodes": 107,
+      "min_samples_leaf": 68,
+      "l2_regularization": 0.8470760688730844,
+      "max_features": 0.7572583899821607
+    },
+    "selected_by": "Optuna TPE, CV top-1 on train trips",
+    "trained_on": "80 train trips, labelled fixes, every 2nd fix",
+    "seed": 352
+  },
+  "features": [
+    "dist_m",
+    "dist_rank",
+    "dist_gap_m",
+    "dist_ratio",
+    "n_cands",
+    "head_cos",
+    "head_gap_deg",
+    "align_score",
+    "align_rank",
+    "speed_mps",
+    "turn_deg",
+    "dt_prev_s",
+    "jump_mps",
+    "arc_len_m",
+    "proj_frac",
+    "at_arc_end",
+    "tail_in_deg",
+    "head_out_deg",
+    "two_way",
+    "support_m",
+    "support_gap_m"
+  ],
+  "candidates": {
+    "radius_m": 50.0,
+    "max_candidates": 10,
+    "fallback_candidates": 3
+  },
+  "geometry": {
+    "index_step_m": 10.0,
+    "index_margin_m": 400.0,
+    "heading_half_window": 2,
+    "support_offsets": [
+      -6,
+      -3,
+      3,
+      6
+    ],
+    "support_clip_m": 200.0
+  },
+  "scoring": {
+    "label_max_dist_m": 50.0
+  },
+  "hmm": {
+    "params": {
+      "beta_m": 5.0,
+      "emission_weight": 0.5,
+      "log_unreachable": -40.0,
+      "gap_split_s": 120.0
+    },
+    "chosen_on": "train trips, out-of-fold emissions, max top-1"
+  },
+  "development_results": [
+    {
+      "partition": "train_oof",
+      "decoder": "classifier_only",
+      "top1": 0.8879197675548979,
+      "continuity": 0.7684896347020451,
+      "decode_ms_per_1k_fixes": 2.887606576642614,
+      "route_f1": 0.8776251883294158,
+      "route_f1_expanded": NaN,
+      "unfillable_breaks": NaN
+    },
+    {
+      "partition": "train_oof",
+      "decoder": "hmm_viterbi",
+      "top1": 0.9382756721141486,
+      "continuity": 0.8920267332750054,
+      "decode_ms_per_1k_fixes": 22.873955579408605,
+      "route_f1": 0.9218123660643932,
+      "route_f1_expanded": 0.9577480188796792,
+      "unfillable_breaks": 449.0
+    },
+    {
+      "partition": "student_test",
+      "decoder": "classifier_only",
+      "top1": 0.9012177912507188,
+      "continuity": 0.7769928519932844,
+      "decode_ms_per_1k_fixes": 2.502338205950746,
+      "route_f1": 0.8985903321244167,
+      "route_f1_expanded": NaN,
+      "unfillable_breaks": NaN
+    },
+    {
+      "partition": "student_test",
+      "decoder": "hmm_viterbi",
+      "top1": 0.9459572466419276,
+      "continuity": 0.909342718937454,
+      "decode_ms_per_1k_fixes": 29.953392485005,
+      "route_f1": 0.9353560889401604,
+      "route_f1_expanded": 0.9763983336601754,
+      "unfillable_breaks": 5.0
+    }
+  ],
+  "versions": {
+    "python": "3.11.9",
+    "numpy": "2.4.6",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.17.1"
+  }
+}

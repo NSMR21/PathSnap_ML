@@ -38,6 +38,11 @@ def _chains(trip: Trip, arc_seq):
     return [[[trip.nodes[n, 1], trip.nodes[n, 0]] for n in chain] for chain in out]
 
 
+def arc_polylines(trip: Trip, arc_seq):
+    """Public helper: arc sequence -> list of [[lat, lon], ...] polylines (used by the API)."""
+    return [[[round(float(a), 6), round(float(b), 6)] for a, b in line] for line in _chains(trip, arc_seq)]
+
+
 def add_network_layer(m, trip: Trip, arc_ids, name="Road network (nearby)", color="#7a7a7a", show=True):
     fg = folium.FeatureGroup(name=name, show=show)
     for line in _arc_lines(trip, arc_ids):
