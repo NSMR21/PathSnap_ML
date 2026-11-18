@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PathSnap Evaluator</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>PathSnap <span>route reconstruction</span></h1>
+  <div class="api">
+    <label for="apiUrl">API</label>
+    <input id="apiUrl" type="text" spellcheck="false">
+    <button id="connectBtn">Connect</button>
+    <span id="apiStatus" class="status">not connected</span>
+  </div>
+</header>
+<main>
+  <aside>
+    <h2>Evaluation trips</h2>
+    <div id="tripList" class="trips"><p class="muted">Connect to the API to load the trips.</p></div>
+    <h2>Results</h2>
+    <div id="results"><p class="muted">Select a trip.</p></div>
+  </aside>
+  <section>
+    <div id="map"></div>
+    <div id="legend">
+      <span><i style="background:#1f4fd6"></i>GPS fixes</span>
+      <span><i style="background:#e8590c"></i>Predicted route (classifier + HMM)</span>
+      <span><i style="background:#7048e8"></i>Classifier only</span>
+    </div>
+  </section>
+</main>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="app.js?v=2"></script>
+</body>
+</html>
