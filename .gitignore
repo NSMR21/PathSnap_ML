@@ -1,0 +1,17 @@
+# raw data + handout PDFs (provided by organisers, not ours to redistribute)
+materials/
+
+# large regenerated intermediates (rebuild with scripts/02_build_dataset.py)
+outputs/features/*.pkl
+
+# untuned bagged ensembles are 40-110 MB (GitHub limit is 100 MB); rebuild with scripts/03
+outputs/models/rf_untuned.joblib
+outputs/models/extratrees_untuned.joblib
+
+# internal AI-assisted team notes (not part of the submission)
+notes/
+
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
