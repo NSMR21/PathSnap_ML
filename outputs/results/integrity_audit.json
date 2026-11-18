@@ -46,12 +46,12 @@
   {
     "check": "reported_metrics_match",
     "status": "PASS",
-    "detail": "re-predicted ['logreg', 'gnb', 'knn', 'dtree', 'rf', 'extratrees', 'hgb', 'mlp']; mismatches: []"
+    "detail": "re-predicted ['logreg', 'gnb', 'knn', 'dtree', 'hgb', 'mlp']; mismatches: []; skipped (model file not present): ['rf', 'extratrees']"
   },
   {
     "check": "refit_deterministic",
-    "status": "PASS",
-    "detail": "max |p_refit - p_saved| per model: {'logreg': 0.0, 'hgb': 0.0}"
+    "status": "FAIL",
+    "detail": "max |p_refit - p_saved| per model: {'logreg': 0.007220566272735596, 'hgb': 0.0}"
   },
   {
     "check": "api_no_reference_leak",
