@@ -1,0 +1,56 @@
+[
+  {
+    "check": "partitions_disjoint",
+    "status": "PASS",
+    "detail": "90 trips, shared ids=[], identical track files=[]"
+  },
+  {
+    "check": "no_evaluator_data",
+    "status": "PASS",
+    "detail": "partitions in config: ['train', 'student_test']; code lines referencing evaluator data: []"
+  },
+  {
+    "check": "no_secrets_or_personal",
+    "status": "PASS",
+    "detail": "suspicious lines: []"
+  },
+  {
+    "check": "hardcoded_trip_ids",
+    "status": "PASS",
+    "detail": {
+      "outside_plot_selection_or_usage_example": [],
+      "occurrences": [
+        "scripts\\01_explore_dataset.py:187 00000005",
+        "scripts\\01_explore_dataset.py:187 00000013",
+        "scripts\\01_explore_dataset.py:187 00000033",
+        "scripts\\01_explore_dataset.py:187 00000054",
+        "scripts\\01_explore_dataset.py:187 00000081",
+        "scripts\\01_explore_dataset.py:187 00000092",
+        "scripts\\01_explore_dataset.py:206 00000005",
+        "scripts\\01_explore_dataset.py:206 00000054",
+        "scripts\\01_explore_dataset.py:206 00000007",
+        "scripts\\04_map_classifier_route.py:9 00000040"
+      ]
+    }
+  },
+  {
+    "check": "features_route_free",
+    "status": "PASS",
+    "detail": "15 trips checked, differing: []"
+  },
+  {
+    "check": "features_reproducible",
+    "status": "PASS",
+    "detail": "15 trips rebuilt, mismatching saved tables: []"
+  },
+  {
+    "check": "reported_metrics_match",
+    "status": "PASS",
+    "detail": "re-predicted ['logreg', 'gnb', 'knn', 'dtree', 'rf', 'extratrees', 'hgb', 'mlp']; mismatches: []"
+  },
+  {
+    "check": "refit_deterministic",
+    "status": "PASS",
+    "detail": "max |p_refit - p_saved| per model: {'logreg': 0.0, 'hgb': 0.0}"
+  }
+]
