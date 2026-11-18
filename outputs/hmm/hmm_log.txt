@@ -1,0 +1,28 @@
+emission probabilities ...
+  OOF fold 0: 297,869 rows
+  OOF fold 1: 242,369 rows
+  OOF fold 2: 240,667 rows
+  OOF fold 3: 261,393 rows
+  OOF fold 4: 240,615 rows
+building lattices (shortest paths) ...
+  train: 80 lattices in 62s
+  student_test: 10 lattices in 6s
+grid search on train (OOF emissions) ...
+best decoder: {'beta_m': 5.0, 'emission_weight': 0.5, 'log_unreachable': -40.0, 'gap_split_s': 120.0} train top-1 0.9383
+   partition         decoder   top1  continuity  decode_ms_per_1k_fixes  route_f1  route_f1_expanded  unfillable_breaks
+   train_oof classifier_only 0.8879      0.7685                  2.8876    0.8776                NaN                NaN
+   train_oof     hmm_viterbi 0.9383      0.8920                 22.8740    0.9218             0.9577              449.0
+student_test classifier_only 0.9012      0.7770                  2.5023    0.8986                NaN                NaN
+student_test     hmm_viterbi 0.9460      0.9093                 29.9534    0.9354             0.9764                5.0
+decoder   classifier_only  hmm_viterbi   delta
+trip_id                                       
+00000000           0.9533       0.9632  0.0100
+00000007           0.9727       0.9993  0.0266
+00000009           0.8875       0.9142  0.0267
+00000040           0.9563       0.9766  0.0204
+00000052           0.9771       0.9962  0.0191
+00000056           0.9120       0.9685  0.0565
+00000065           0.8750       0.8880  0.0130
+00000076           0.9266       0.9724  0.0458
+00000077           0.7857       0.8770  0.0913
+00000091           0.8947       0.9451  0.0503

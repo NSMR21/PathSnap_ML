@@ -1,0 +1,34 @@
+{
+  "params": {
+    "beta_m": 5.0,
+    "emission_weight": 0.5,
+    "log_unreachable": -40.0,
+    "gap_split_s": 120.0
+  },
+  "chosen_on": "train trips, out-of-fold emissions, max top-1",
+  "grid": {
+    "beta_m": [
+      5.0,
+      10.0,
+      20.0,
+      40.0,
+      80.0
+    ],
+    "emission_weight": [
+      0.5,
+      1.0,
+      2.0,
+      4.0
+    ],
+    "log_unreachable": [
+      -15.0,
+      -40.0
+    ],
+    "gap_split_s": [
+      30.0,
+      120.0
+    ]
+  },
+  "grid_size": 80,
+  "grid_search_s": 446.44215310001164
+}

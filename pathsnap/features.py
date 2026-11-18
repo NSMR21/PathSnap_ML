@@ -138,12 +138,18 @@ def candidate_features(px, py, t, net: RoadNetwork, cs: CandidateSet) -> pd.Data
     })
 
 
-def build_trip_tables(trip: Trip, radius=config.CANDIDATE_RADIUS_M, k_max=config.MAX_CANDIDATES,
-                      label_max_dist=config.LABEL_MAX_DIST_M, use_route: Optional[bool] = None) -> TripTables:
-    """Full per-trip processing: project -> index -> candidates -> features (-> labels)."""
+def trip_network(trip: Trip):
+    """Projection + indexed road network for a trip (the one the features are built on)."""
     proj = LocalProjector.around(trip.lon, trip.lat)
     px, py = proj.forward(trip.lon, trip.lat)
     net = RoadNetwork(trip.nodes, trip.arcs, proj).build_index(px, py)
+    return proj, px, py, net
+
+
+def build_trip_tables(trip: Trip, radius=config.CANDIDATE_RADIUS_M, k_max=config.MAX_CANDIDATES,
+                      label_max_dist=config.LABEL_MAX_DIST_M, use_route: Optional[bool] = None) -> TripTables:
+    """Full per-trip processing: project -> index -> candidates -> features (-> labels)."""
+    proj, px, py, net = trip_network(trip)
     cs = generate_candidates(px, py, net, radius=radius, k_max=k_max)
     cand = candidate_features(px, py, trip.t, net, cs)
     cand.insert(0, "trip_id", trip.trip_id)
