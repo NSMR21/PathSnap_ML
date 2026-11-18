@@ -10,11 +10,11 @@ UE24CS352A Machine Learning hackathon (PES University).
 | 3. Pre-processing, labels, candidates, features | done (`scripts/02_build_dataset.py`) |
 | 4-5. Train + compare 8 models (grouped CV + student_test) | done (`scripts/03_train_compare_models.py`) |
 | Classifier-only route maps | done (`scripts/04_map_classifier_route.py`) |
-| 6. Bayesian hyper-parameter optimisation | **in progress**: `scripts/05_bayesian_tuning.py` written, search results not committed yet |
-| 7. HMM + Viterbi route reconstruction | **in progress**: decoder in `pathsnap/hmm.py`, experiment script next |
-| 8. Export final artifacts | **next** |
-| 9-10. FastAPI backend (laptop 1) + evaluator UI (laptop 2) | **next** |
-| 12. Technical report | **next** |
+| 6. Bayesian hyper-parameter optimisation | done (`scripts/05_bayesian_tuning.py`, `05b_refit_tuned.py`, `outputs/tuning/`) |
+| 7. HMM + Viterbi route reconstruction | done (`pathsnap/hmm.py`, `scripts/06_hmm_viterbi.py`, `outputs/hmm/`) |
+| 8. Export final artifacts | done (`scripts/07_export_artifacts.py`, `artifacts/`) |
+| 9-10. FastAPI backend (laptop 1) + evaluator UI (laptop 2) | done (`api/`, `ui/`, `run_api.bat`, `run_ui.bat`) |
+| 11. Integration test | `tests/test_api.py` (all student_test trips through the API) |
 
 ## Folder layout
 
@@ -34,6 +34,10 @@ hackathon/
     hmm.py             HMM + Viterbi decoder, shortest-path router, route expansion
     viz.py             folium helpers
   scripts/             numbered pipeline steps
+  api/                 FastAPI backend (main.py = endpoints + logging, service.py = pipeline)
+  ui/                  evaluator web page (index.html, app.js, style.css)
+  artifacts/           exported tuned model + pipeline.json used by the API
+  tests/               end-to-end API test
   outputs/
     eda/               inventory, data-quality facts, EDA plots, sweeps
     features/          feature tables (pkl, git-ignored) + build summaries
@@ -61,7 +65,42 @@ python scripts/03_train_compare_models.py   # longest  8 models, 5-fold GroupKFo
 python scripts/04_map_classifier_route.py   # maps of classifier-only routes (student_test)
 ```
 
+```bash
+python scripts/05_bayesian_tuning.py        # ~35 min  Optuna TPE search for Gradient Boosting
+python scripts/05b_refit_tuned.py           # ~1 min   refit + re-time tuned vs untuned
+python scripts/06_hmm_viterbi.py            # ~15 min  decoder grid (train), classifier vs HMM, maps
+python scripts/07_export_artifacts.py       # seconds  artifacts/ for the API
+python tests/test_api.py                    # ~1 min   all student_test trips through the API
+```
+
 `03` accepts `--models rf,hgb` and `--folds 3` for quicker partial runs.
+
+## Two-laptop deployment
+
+**Laptop 1 (API).** Install the requirements, keep `artifacts/` from the repo, and extract the
+evaluation trips so the folder looks like `materials/evaluator_test/<id>/<id>.track ...`
+(or set `PATHSNAP_TRIPS_DIR` to wherever they are). Then:
+
+```bash
+run_api.bat
+```
+
+The console shows every request with the trip, accuracy and timings. Allow Python through
+Windows Firewall on port 8000 and note the laptop's IP address (`ipconfig`).
+
+**Laptop 2 (UI).** Same Wi-Fi network. From the repository folder:
+
+```bash
+run_ui.bat
+```
+
+The page opens at `http://localhost:8501`. Type laptop 1's address in the API box
+(for example `http://192.168.1.23:8000`) and press Connect. The ten trips appear; click one to
+run it. The page needs internet for the map tiles; without it the routes are drawn on a plain
+background instead.
+
+The API only returns the predicted route and the accuracy numbers. The reference route stays on
+laptop 1 and is read only after prediction, to score it.
 
 Before submitting, run the integrity self-audit. It checks that partitions are disjoint, that
 features don't depend on the route, that results are reproducible and match the saved

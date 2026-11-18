@@ -140,7 +140,8 @@ def check_static():
     texts = {p: p.read_text(encoding="utf-8", errors="replace") for p in CODE_FILES + DOC_FILES if p.exists()}
     me = Path(__file__).resolve()
 
-    evaluator_refs = [f"{p.relative_to(ROOT)}:{i}" for p, t in texts.items() if p.resolve() != me
+    # development code only (pathsnap/, scripts/); the API and deployment docs are meant to point at it
+    evaluator_refs = [f"{p.relative_to(ROOT)}:{i}" for p, t in texts.items() if p.resolve() != me and p in CODE_FILES
                       for i, line in enumerate(t.splitlines(), 1)
                       if re.search(r"evaluator[_ ]?test|eval_test", line, re.I) and not line.lstrip().startswith(("#", "*", "-"))]
     parts_cfg = list(config.PARTITIONS)
@@ -171,12 +172,41 @@ def check_static():
            {"outside_plot_selection_or_usage_example": unexplained, "occurrences": ids})
 
 
+def check_api():
+    """The deployed API must not expose the reference route and must predict without it."""
+    import os
+    import shutil
+    import tempfile
+    from api.service import PathSnapService
+    from pathsnap.trip_io import read_route
+    art = ROOT / "artifacts"
+    if not (art / "pipeline.json").exists():
+        record("api_no_reference_leak", "SKIPPED", "artifacts/ not exported yet")
+        return
+    src = config.PARTITIONS["student_test"]
+    tid = "00000052"
+    with tempfile.TemporaryDirectory() as tmp:
+        # copy of the trip WITHOUT its .route file: prediction must be identical
+        os.makedirs(Path(tmp) / tid)
+        for ext in ("track", "nodes", "arcs"):
+            shutil.copy2(src / tid / f"{tid}.{ext}", Path(tmp) / tid / f"{tid}.{ext}")
+        with_ref = PathSnapService(art, src).run(tid)
+        without_ref = PathSnapService(art, Path(tmp)).run(tid)
+    route = read_route(src, tid)
+    text = json.dumps(with_ref)
+    leak = "reference" in text.lower() or json.dumps(route.tolist()) in text
+    same = with_ref["predicted_route"] == without_ref["predicted_route"]
+    record("api_no_reference_leak", (not leak) and same,
+           f"trip {tid}: reference in response={leak}, prediction identical without .route file={same}")
+
+
 def main():
     check_partitions()
     check_static()
     check_features()
     check_models()
-    out = config.RESULTS_DIR / "integrity_audit.json"
+    check_api()
+    out =config.RESULTS_DIR / "integrity_audit.json"
     out.write_text(json.dumps(results, indent=2))
     n_fail = sum(r["status"] == "FAIL" for r in results)
     print(f"\n{len(results)} checks, {n_fail} failed -> {out.relative_to(ROOT)}")

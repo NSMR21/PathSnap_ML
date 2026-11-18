@@ -52,5 +52,10 @@
     "check": "refit_deterministic",
     "status": "PASS",
     "detail": "max |p_refit - p_saved| per model: {'logreg': 0.0, 'hgb': 0.0}"
+  },
+  {
+    "check": "api_no_reference_leak",
+    "status": "PASS",
+    "detail": "trip 00000052: reference in response=False, prediction identical without .route file=True"
   }
 ]
